@@ -1,3 +1,7 @@
+import transport.Car;
+
+import java.util.Calendar;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -12,19 +16,34 @@ public class Main {
         Person Vladimir = new Person("Владимир", "Казань", 2001, null);
         Vladimir.print();*/
 
-        /*Car car1 = new Car("Lada", "Grande", null, "России", 1.7, 2015);
-        Car car2 = new Car("Audi", "A8 50 L TDI quattro", "черный", "Германии", 3.8, 2020);
-        Car car3 = new Car("BMW", "Z8", "черный", null, 3.0, 2021);
-        Car car4 = new Car("Kia", "Sportage 4 поколение", "красный", "Южной Корее", 2.4, 2018);
-        Car car5 = new Car("Hyundai", "Avante", "оранжевый", "Южной Корее", 1.6, 2016);
+        Car car1 = new Car("Lada", "Grande", null, "России", 1.7, 2015,
+                "механическая", "седан", "х000хх000", false, 4);
+
+        Car car2 = new Car("Audi", "A8 50 L TDI quattro", "черный", "Германии", 3.8,
+                2020,"автомат", "седан", "чч45ч444", true, 0);
+
+        Car car3 = new Car("BMW", "Z8", "черный", null, 3.0, 2021, "механика",
+                "седан", "автомат", true, 0);
+
+        Car car4 = new Car("Kia", "Sportage 4 поколение", "красный", "Южной Корее", 2.4,
+                2018, "автомат", "хэтчбек", null, true, 0);
+
+        Car car5 = new Car("Hyundai", "Avante", "оранжевый", "Южной Корее", 1.6,
+                2016, "автомат","седан", null, true, 0);
+
         car1.print();
-        car2.print();
-        car3.print();
-        car4.print();
-        car5.print();*/
+
+       // System.out.println(car1.changeTires (Calendar.DECEMBER));
+        System.out.println(car1.getRegistrationNumber());
+        System.out.println(!car1.correctNumber("3ччч000ч"));
 
 
-        Flower[] flowers = new Flower[10];
+        //car3.print();
+        //car4.print();
+       // car5.print();
+
+
+       /* Flower[] flowers = new Flower[10];
         Flower one = new Flower(null, "Роза", "Голландия", 35.59, 3);
         Flower two = new Flower(null, "Хризантема", null, 15.0, 5);
         Flower three = new Flower(null, "Пион", "Англия", 69.9, 1);
@@ -54,7 +73,7 @@ public class Main {
         nameFlowers += "Сумма букета = "  + sum;
         nameFlowers += "\n";
         nameFlowers += " Срок годности " + lifeSpan;
-        System.out.println(nameFlowers);
+        System.out.println(nameFlowers);*/
 
 
     }

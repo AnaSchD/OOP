@@ -5,7 +5,7 @@ public class Flower {
     private String flowerName;
     private String country;
     private Double cost;
-    Integer lifeSpan;
+    private Integer lifeSpan;
 
 
     public String getFlowerColor() {
@@ -63,8 +63,8 @@ public class Flower {
 
     }
 
-    void printFlower() {
-        System.out.println( flowerName + " " + flowerColor + ". " +" Страна происхождения - " + country + ". " + " Стоимость "
+    public void printFlower() {
+        System.out.println(flowerName + " " + flowerColor + ". " + " Страна происхождения - " + country + ". " + " Стоимость "
                 + cost + " руб. " + " Срок стояния - " + lifeSpan + " дней.");
     }
 

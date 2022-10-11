@@ -1,12 +1,12 @@
 public class Person {
 
-    String name;
+    private String name;
     private String town;
     private Integer yearOfBirth;
 
-    String job;
+    private String job;
 
-    Person(String name, String town, Integer yearOfBirth, String job) {
+    public Person(String name, String town, Integer yearOfBirth, String job) {
 
         if (name == null) {
             this.name = "Информация не указана";
@@ -57,7 +57,7 @@ public class Person {
         }
     }
 
-    void print() {
+    public void print() {
 
         System.out.println("Привет! Меня зовут " + name + "." + " Я из города " + town + "." + " Я родился в " + yearOfBirth + " году." +
                 "Я работаю на должности " + job + "." + " Будем знакомы!");

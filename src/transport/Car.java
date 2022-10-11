@@ -1,0 +1,242 @@
+package transport;
+
+import java.time.LocalDate;
+
+public class Car {
+
+    private String brand;
+    private String model;
+    private String color;
+    private String productionCountry;
+    private double engineVolume;
+    private Integer productionYear;
+    private String transmission;
+    private String typeBody;
+    private String registrationNumber;
+    private Integer numberOfSeats;
+    private boolean summerRubber;
+
+    private Key key;
+
+    private Insurance insurance;
+
+    public static class Key {
+        private boolean remoteEngineStart;
+        private boolean keylessAccess;
+
+        public Key(boolean remoteEngineStart, boolean keylessAccess) {
+            this.remoteEngineStart = remoteEngineStart;
+            this.keylessAccess = keylessAccess;
+        }
+
+    }
+
+    public static class Insurance {
+
+        private final LocalDate validity;
+        private final Double price;
+        private String number;
+
+        public Insurance(LocalDate validity, Double price, String number) {
+            this.validity = validity;
+            if (validity.isBefore(LocalDate.now())) {
+                System.out.println("Срочно ехать оформлять новую страховку");
+            }
+
+            if (number.length() < 9) {
+                System.out.println("Номер страховки некорректный");
+            } else {
+                this.number = number;
+            }
+            this.price = price;
+        }
+    }
+
+    public Key getKey() {
+        return key;
+    }
+
+    public Insurance getInsurance() {
+        return insurance;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public String getProductionCountry() {
+        return productionCountry;
+    }
+
+    public double getEngineVolume() {
+        return engineVolume;
+    }
+
+    public Integer getProductionYear() {
+        return productionYear;
+    }
+
+    public String getTransmission() {
+        return transmission;
+    }
+
+    public String getTypeBody() {
+        return typeBody;
+    }
+
+    public String getRegistrationNumber() {
+        return registrationNumber;
+    }
+
+    public Integer getNumberOfSeats() {
+        return numberOfSeats;
+    }
+
+    public boolean getSummerRubber() {
+        return summerRubber;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public void setEngineVolume(double engineVolume) {
+        this.engineVolume = engineVolume;
+    }
+
+    public void setTransmission(String transmission) {
+        this.transmission = transmission;
+    }
+
+    public void setRegistrationNumber(String registrationNumber) {
+        this.registrationNumber = registrationNumber;
+    }
+
+    public void setSummerRubber(boolean summerRubber) {
+        this.summerRubber = !this.summerRubber;
+    }
+
+    public void setKey(Key key) {
+        this.key = key;
+    }
+
+    public void setInsurance(Insurance insurance) {
+        this.insurance = insurance;
+    }
+
+    public Car(String brand, String model, String color, String productionCountry, Double engineVolume, Integer productionYear,
+               String transmission, String typeBody, String registrationNumber, boolean rubber, Integer numberOfSeats) {
+        if (brand == null) {
+            this.brand = "default";
+        } else {
+            this.brand = brand;
+        }
+        if (model == null) {
+            this.model = "default";
+        } else {
+            this.model = model;
+        }
+        if (productionCountry == null) {
+            this.productionCountry = "default";
+        } else {
+            this.productionCountry = productionCountry;
+        }
+
+        if (engineVolume == null) {
+            this.engineVolume = 1.5;
+        } else {
+            this.engineVolume = engineVolume;
+        }
+
+        if (color == null) {
+            this.color = "белый";
+        } else {
+            this.color = color;
+        }
+
+        if (productionYear == null) {
+            this.productionYear = 2000;
+        } else {
+            this.productionYear = productionYear;
+        }
+
+        if (transmission == null || transmission.isEmpty()) {
+            this.transmission = "defauilt";
+        } else {
+            this.transmission = transmission;
+        }
+
+        if (typeBody == null || typeBody.isEmpty()) {
+            this.typeBody = "defauilt";
+        } else {
+            this.typeBody = typeBody;
+        }
+
+        if (registrationNumber == null || registrationNumber.isEmpty()) {
+            this.registrationNumber = "defauilt";
+        } else {
+            this.registrationNumber = registrationNumber;
+        }
+
+        if (numberOfSeats == null) {
+            this.numberOfSeats = 0;
+        } else {
+            this.numberOfSeats = numberOfSeats;
+        }
+
+    }
+
+
+    public boolean changeTires() {
+        summerRubber = !summerRubber;
+        return true;
+    }
+
+    public boolean correctNumber(String registrationNumber) {
+        char[] regNum = registrationNumber.toCharArray();
+        if (regNum.length != 8) {
+            return false;
+        }
+        if (!Character.isAlphabetic(regNum[0])) {
+            return false;
+        }
+        if (!Character.isDigit(regNum[1])) {
+            return false;
+        }
+        if (!Character.isDigit(regNum[2])) {
+            return false;
+        }
+        if (!Character.isDigit(regNum[3])) {
+            return false;
+        }
+        if (!Character.isAlphabetic(regNum[4])) {
+            return false;
+        }
+        if (!Character.isAlphabetic(regNum[5])) {
+            return false;
+        }
+        if (!Character.isDigit(regNum[6])) {
+            return false;
+        }
+        if (!Character.isDigit(regNum[7])) {
+            return false;
+        }
+        return true;
+    }
+
+    public void print() {
+        System.out.println(brand + " " + model + " " + productionYear + " год выпуска, " + " сборка в " + productionCountry + ", " +
+                color + " цвет кузова, " + "объем двигателя " + engineVolume + " литра." + "Коробка передач " + transmission + ". " + "Тип кузова " +
+                typeBody + ". " + "Регистрационный номер " + registrationNumber + ". " + "Количество мест " + numberOfSeats + ". " +
+                "Резина " + summerRubber + ".");
+    }
+
+}
