@@ -25,18 +25,19 @@ public class Main {
 
 
         Flower[] flowers = new Flower[10];
-        Flower one = new Flower(null, "Роза", "Голландия", 35.59, 0);
+        Flower one = new Flower(null, "Роза", "Голландия", 35.59, 3);
         Flower two = new Flower(null, "Хризантема", null, 15.0, 5);
         Flower three = new Flower(null, "Пион", "Англия", 69.9, 1);
         Flower four = new Flower(null, "Гипсофила", "Турция", 19.5, 10);
         flowers[0] = one;
         flowers[1] = two;
+
         calculate(flowers);
     }
 
-    private static void calculate(Flower[] flowers) {
+    private static void calculate (Flower[] flowers) {
         double sum = 0;
-        int lifeSpan =1110;
+        int lifeSpan = 1000;
         String nameFlowers = " В букете есть: \n";
 
         for (int i = 0; i < flowers.length; i++) {

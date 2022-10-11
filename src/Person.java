@@ -1,8 +1,8 @@
 public class Person {
 
     String name;
-    String town;
-    Integer yearOfBirth;
+    private String town;
+    private Integer yearOfBirth;
 
     String job;
 
@@ -31,6 +31,30 @@ public class Person {
             this.yearOfBirth = yearOfBirth;
         }
 
+    }
+
+    public String getTown() {
+        return town;
+    }
+
+    public void setTown(String newTown) {
+        if (town != null) {
+            this.town = newTown;
+        } else {
+            this.town = "Информация не указана";
+        }
+    }
+
+    public Integer getYearOfBirth() {
+        return yearOfBirth;
+    }
+
+    public void setYearOfBirth(Integer newYearOfBirth) {
+        if (yearOfBirth < 0 && yearOfBirth == null) {
+            this.yearOfBirth = 0;
+        } else {
+            this.yearOfBirth = newYearOfBirth;
+        }
     }
 
     void print() {
