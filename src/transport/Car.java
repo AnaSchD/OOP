@@ -2,14 +2,9 @@ package transport;
 
 import java.time.LocalDate;
 
-public class Car {
+public class Car extends Transport {
 
-    private String brand;
-    private String model;
-    private String color;
-    private String productionCountry;
     private double engineVolume;
-    private Integer productionYear;
     private String transmission;
     private String typeBody;
     private String registrationNumber;
@@ -60,28 +55,8 @@ public class Car {
         return insurance;
     }
 
-    public String getBrand() {
-        return brand;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public String getProductionCountry() {
-        return productionCountry;
-    }
-
     public double getEngineVolume() {
         return engineVolume;
-    }
-
-    public Integer getProductionYear() {
-        return productionYear;
     }
 
     public String getTransmission() {
@@ -102,10 +77,6 @@ public class Car {
 
     public boolean getSummerRubber() {
         return summerRubber;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
     }
 
     public void setEngineVolume(double engineVolume) {
@@ -132,40 +103,15 @@ public class Car {
         this.insurance = insurance;
     }
 
-    public Car(String brand, String model, String color, String productionCountry, Double engineVolume, Integer productionYear,
-               String transmission, String typeBody, String registrationNumber, boolean rubber, Integer numberOfSeats) {
-        if (brand == null) {
-            this.brand = "default";
-        } else {
-            this.brand = brand;
-        }
-        if (model == null) {
-            this.model = "default";
-        } else {
-            this.model = model;
-        }
-        if (productionCountry == null) {
-            this.productionCountry = "default";
-        } else {
-            this.productionCountry = productionCountry;
-        }
+    public Car(String model, String brand, String productionYear, String productionCountry, String color, Integer maxSpeed,
+               Double engineVolume, String transmission, String typeBody, String registrationNumber, boolean rubber, Integer numberOfSeats) {
+
+       super(model, brand, productionYear, productionCountry, color, maxSpeed);
 
         if (engineVolume == null) {
             this.engineVolume = 1.5;
         } else {
             this.engineVolume = engineVolume;
-        }
-
-        if (color == null) {
-            this.color = "белый";
-        } else {
-            this.color = color;
-        }
-
-        if (productionYear == null) {
-            this.productionYear = 2000;
-        } else {
-            this.productionYear = productionYear;
         }
 
         if (transmission == null || transmission.isEmpty()) {
@@ -233,8 +179,7 @@ public class Car {
     }
 
     public void print() {
-        System.out.println(brand + " " + model + " " + productionYear + " год выпуска, " + " сборка в " + productionCountry + ", " +
-                color + " цвет кузова, " + "объем двигателя " + engineVolume + " литра." + "Коробка передач " + transmission + ". " + "Тип кузова " +
+        System.out.println("объем двигателя " + engineVolume + " литра." + "Коробка передач " + transmission + ". " + "Тип кузова " +
                 typeBody + ". " + "Регистрационный номер " + registrationNumber + ". " + "Количество мест " + numberOfSeats + ". " +
                 "Резина " + summerRubber + ".");
     }
