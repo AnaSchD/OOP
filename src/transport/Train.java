@@ -25,6 +25,10 @@ public class Train extends Transport {
         System.out.println();
     }
 
+    @Override
+    public void refill() {
+        System.out.println("Заправить дизелем на заправке");
+    }
     public double getPriceTrip() {
         return priceTrip;
     }

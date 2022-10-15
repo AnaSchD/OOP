@@ -47,6 +47,13 @@ public class Car extends Transport {
         }
     }
 
+    @Override
+    public void refill() {
+        System.out.println("Если машина электрокар, то заряди на специальной элетропарковке");
+        System.out.println("Заправить бензином на заправке");
+        System.out.println("Заправить дизелем на заправке");
+    }
+
     public Key getKey() {
         return key;
     }

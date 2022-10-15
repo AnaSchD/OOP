@@ -2,8 +2,6 @@ import transport.Bus;
 import transport.Car;
 import transport.Train;
 
-import java.util.Calendar;
-
 public class Main {
     public static void main(String[] args) {
 
@@ -13,16 +11,19 @@ public class Main {
         Train Leningrad = new Train("Ленинград D-125", "2019", "Россия", 270,
                 1700.00, "", "Леннинградский вокзал", "Ленинград-Пассажирский", 8);
 
-        Lastochka.printTrain();
-        Leningrad.printTrain();
+        Lastochka.refill();
+
+        //Lastochka.printTrain();
+        //Leningrad.printTrain();
 
         Bus bus1 = new Bus("3205", "ПАЗ", "2000", "Россия", "белый", 80);
         Bus bus2 = new Bus("677", "Ли-АЗ", "1999", "Россия", "оранжевый", 90);
         Bus bus3 = new Bus("5299", "НефАЗ", "2005", "Россия", "синий", 100);
 
-        bus1.printTransportTwo();
-        bus2.printTransportTwo();
-        bus3.printTransport();
+        bus1.refill();
+       // bus1.printTransportTwo();
+       // bus2.printTransportTwo();
+       // bus3.printTransport();
 
 
        /* Person Maksim = new Person("Максим", null, 1987, "бренд-менеджера");
@@ -36,31 +37,36 @@ public class Main {
         Person Vladimir = new Person("Владимир", "Казань", 2001, null);
         Vladimir.print();*/
 
-       /* Car car1 = new Car("Lada", "Grande", null, "России", 1.7, 2015,
-                "механическая", "седан", "х000хх000", false, 4);
 
-        Car car2 = new Car("Audi", "A8 50 L TDI quattro", "черный", "Германии", 3.8,
-                2020,"автомат", "седан", "чч45ч444", true, 0);
 
-        Car car3 = new Car("BMW", "Z8", "черный", null, 3.0, 2021, "механика",
-                "седан", "автомат", true, 0);
+        Car car1 = new Car("Lada", "Grande", "2015", "России","желтый", 80,
+                1.7, "автомат", "седан", "х000хх000",false, 4);
 
-        Car car4 = new Car("Kia", "Sportage 4 поколение", "красный", "Южной Корее", 2.4,
-                2018, "автомат", "хэтчбек", null, true, 0);
+        Car car2 = new Car("Audi", "A8 50 L TDI quattro", "2020", "Германии", "черный", 80,
+                3.8, "механика", "седаг", "чч45ч444", true, 3);
 
-        Car car5 = new Car("Hyundai", "Avante", "оранжевый", "Южной Корее", 1.6,
-                2016, "автомат","седан", null, true, 0);
+        Car car3 = new Car("BMW", "Z8", "2021", "Германия", "черный", 100, 3.0,
+                "автомат", "седан", null, true, 4);
 
-        car1.print();
+        Car car4 = new Car("Kia", "Sportage 4 поколение", "2018", "Южной Корее", "красный",
+                130, 2.4, "автомат", "хэтчбек", null, true, 6);
 
-       // System.out.println(car1.changeTires (Calendar.DECEMBER));
-        System.out.println(car1.getRegistrationNumber());
-        System.out.println(!car1.correctNumber("3ччч000ч"));
+        Car car5 = new Car("Hyundai", "Avante", "2016", "Южной Корее", "оранжевый",
+                150, 1.6, "автомат", "седан", null, false, 6);
+
+        car3.refill();
+
+
+        //car1.print();
+
+        // System.out.println(car1.changeTires (Calendar.DECEMBER));
+       // System.out.println(car1.getRegistrationNumber());
+       // System.out.println(!car1.correctNumber("3ччч000ч"));
 
 
         //car3.print();
         //car4.print();
-       // car5.print();
+        // car5.print();
 
 
        /* Flower[] flowers = new Flower[10];
