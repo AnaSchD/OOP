@@ -49,9 +49,7 @@ public class Car extends Transport {
 
     @Override
     public void refill() {
-        System.out.println("Если машина электрокар, то заряди на специальной элетропарковке");
-        System.out.println("Заправить бензином на заправке");
-        System.out.println("Заправить дизелем на заправке");
+        System.out.println("Вид топлива для заправки машины " + getBrand() + ":" + getFuel());
     }
 
     public Key getKey() {
@@ -111,9 +109,9 @@ public class Car extends Transport {
     }
 
     public Car(String model, String brand, String productionYear, String productionCountry, String color, Integer maxSpeed,
-               Double engineVolume, String transmission, String typeBody, String registrationNumber, boolean rubber, Integer numberOfSeats) {
+               Double engineVolume, String transmission, String typeBody, String registrationNumber, boolean rubber, Integer numberOfSeats, String fuel) {
 
-       super(model, brand, productionYear, productionCountry, color, maxSpeed);
+       super(model, brand,productionYear, productionCountry, color, maxSpeed, fuel);
 
         if (engineVolume == null) {
             this.engineVolume = 1.5;

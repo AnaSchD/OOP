@@ -4,6 +4,8 @@ public abstract class Transport {
 
     private String model;
     private String brand;
+
+    private String fuel;
     private final String productionYear;
     private final String productionCountry;
     private String color;
@@ -16,9 +18,10 @@ public abstract class Transport {
         this.maxSpeed = maxSpeed;
     }
 
-    public Transport(String model, String brand, String productionYear, String productionCountry, String color, Integer maxSpeed) {
+    public Transport(String model, String brand,String productionYear, String productionCountry, String color, Integer maxSpeed, String fuel) {
         this.model = model;
         this.brand = brand;
+        this.fuel = fuel;
         this.productionYear = productionYear;
         this.productionCountry = productionCountry;
         setColor(color);
@@ -32,7 +35,11 @@ public abstract class Transport {
 
     public void printTransportTwo( ) {
         System.out.println("Модель " + model + ". " + "Год выпуска " + productionYear + ". " + "Страна " + productionCountry + ". "
-                + "Цвет " + color + ". " + "Максимальная скорость " + maxSpeed + " км/ч"+ ". ");
+                + "Цвет " + color + ". " + "Максимальная скорость " + maxSpeed + " км/ч"+ ". " + "Топливо " + fuel);
+    }
+
+    public String getFuel() {
+        return fuel;
     }
 
     public String getModel() {
