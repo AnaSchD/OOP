@@ -5,28 +5,28 @@ import transport.Train;
 public class Main {
     public static void main(String[] args) {
 
-        //Train Lastochka = new Train("Ласточка B-901", "2011", "Россия", 301,
-              //  3500.00, "", "Белорусский вокзал", "Минск-Пассажирский", 11);
+        Train Lastochka = new Train("Ласточка B-901", "2011", "Россия", 301,
+                3500.00, "", "Белорусский вокзал", "Минск-Пассажирский", 11);
 
-      //  Train Leningrad = new Train("Ленинград D-125", "2019", "Россия", 270,
-             //   1700.00, "", "Леннинградский вокзал", "Ленинград-Пассажирский", 8);
+        Train Leningrad = new Train("Ленинград D-125", "2019", "Россия", 270,
+                1700.00, "", "Леннинградский вокзал", "Ленинград-Пассажирский", 8);
 
-       // Lastochka.refill();
+        Lastochka.refill();
 
-        //Lastochka.printTrain();
-        //Leningrad.printTrain();
+        Lastochka.printTrain();
+        Leningrad.printTrain();
 
-        //Bus bus1 = new Bus("3205", "ПАЗ", "2000", "Россия", "белый", 80);
-       // Bus bus2 = new Bus("677", "Ли-АЗ", "1999", "Россия", "оранжевый", 90);
-        //Bus bus3 = new Bus("5299", "НефАЗ", "2005", "Россия", "синий", 100);
+        Bus bus1 = new Bus("3205", "ПАЗ", "2000", "Россия", "белый", 80,"");
+        Bus bus2 = new Bus("677", "Ли-АЗ", "1999", "Россия", "оранжевый", 90,"");
+        Bus bus3 = new Bus("5299", "НефАЗ", "2005", "Россия", "синий", 100, "");
 
-      //  bus1.refill();
-       // bus1.printTransportTwo();
-       // bus2.printTransportTwo();
-       // bus3.printTransport();
+        bus1.refill();
+        bus1.printTransportTwo();
+        bus2.printTransportTwo();
+        bus3.printTransport();
 
 
-       /* Person Maksim = new Person("Максим", null, 1987, "бренд-менеджера");
+       Person Maksim = new Person("Максим", null, 1987, "бренд-менеджера");
         Maksim.print();
         Person Anya = new Person("Аня", "Москва", 1993, "методиста образовательных программ");
         Anya.print();
@@ -35,7 +35,7 @@ public class Main {
         Person Artem = new Person("Артем", "Москва", 1995, null);
         Artem.print();
         Person Vladimir = new Person("Владимир", "Казань", 2001, null);
-        Vladimir.print();*/
+        Vladimir.print();
 
 
 
@@ -57,19 +57,18 @@ public class Main {
         car3.refill();
 
 
-        //car1.print();
+        car1.print();
 
-        // System.out.println(car1.changeTires (Calendar.DECEMBER));
-       // System.out.println(car1.getRegistrationNumber());
-       // System.out.println(!car1.correctNumber("3ччч000ч"));
-
-
-        //car3.print();
-        //car4.print();
-        // car5.print();
+        System.out.println(car1.getRegistrationNumber());
+        System.out.println(!car1.correctNumber("3ччч000ч"));
 
 
-       /* Flower[] flowers = new Flower[10];
+        car3.print();
+        car4.print();
+        car5.print();
+
+
+       Flower[] flowers = new Flower[10];
         Flower one = new Flower(null, "Роза", "Голландия", 35.59, 3);
         Flower two = new Flower(null, "Хризантема", null, 15.0, 5);
         Flower three = new Flower(null, "Пион", "Англия", 69.9, 1);
@@ -99,7 +98,7 @@ public class Main {
         nameFlowers += "Сумма букета = "  + sum;
         nameFlowers += "\n";
         nameFlowers += " Срок годности " + lifeSpan;
-        System.out.println(nameFlowers);*/
+        System.out.println(nameFlowers);
 
 
     }
